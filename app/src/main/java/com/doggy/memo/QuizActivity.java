@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.List;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -48,16 +50,24 @@ public class QuizActivity extends AppCompatActivity{
         setMemoList2();
     }
 
-    public  void showData() {
-            memo = realm.where(Memo.class).equalTo("updateDate",
-                    getIntent().getStringExtra("updateDate")).findFirst();
-    }
 
     public void answer(View view) {
-        showData();
+        memo = adapter.getItem(0);
         if(answerEditText.getText().toString().equals(memo.content)){
             adapter.remove(memo);
+            Toast.makeText(this, "おやすみ！", Toast.LENGTH_SHORT).show();
+            answerEditText.setText("");
 
+            if (listView.getCount() == 0) {
+                Intent intent = new Intent(QuizActivity.this, MainActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "二度寝しよう！", Toast.LENGTH_SHORT).show();
+
+            } else {}
+
+        }else {
+            Toast.makeText(this, "おはよう！", Toast.LENGTH_SHORT).show();
+            answerEditText.setText("");
         }
     }
 
@@ -68,4 +78,3 @@ public class QuizActivity extends AppCompatActivity{
         realm.close();
     }
 }
-

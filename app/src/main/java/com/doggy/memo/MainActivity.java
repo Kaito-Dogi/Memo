@@ -69,8 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void quiz(View view) {
-        Intent intent = new Intent(this, QuizActivity.class);
-
+        Intent intent = new Intent(MainActivity.this, QuizActivity.class);
         startActivity(intent);
     }
 }
