@@ -35,5 +35,15 @@
             android:onClick="update"
             android:text="更新"
             android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="delete"
+            android:text="削除"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </RelativeLayout>

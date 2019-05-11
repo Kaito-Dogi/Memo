@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class MemoAdapter extends ArrayAdapter<Memo> {
+public class MemoAdapter2 extends ArrayAdapter<Memo> {
 
     private LayoutInflater layoutinflater;
 
-    MemoAdapter(Context context, int textViewResourceId, List<Memo> objects) {
+    MemoAdapter2(Context context, int textViewResourceId, List<Memo> objects) {
         super(context, textViewResourceId, objects);
         layoutinflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -24,14 +24,12 @@ public class MemoAdapter extends ArrayAdapter<Memo> {
         Memo memo = getItem(position);
 
         if (convertView == null) {
-            convertView = layoutinflater.inflate(R.layout.layout_item_memo, null);
+            convertView = layoutinflater.inflate(R.layout.layout_item_memo2, null);
         }
 
         TextView titleText = (TextView) convertView.findViewById(R.id.titleText);
-        TextView contentText = (TextView) convertView.findViewById(R.id.contentText);
 
         titleText.setText(memo.title);
-        contentText.setText(memo.content);
 
         return convertView;
     }
