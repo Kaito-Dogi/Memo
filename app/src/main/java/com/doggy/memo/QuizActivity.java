@@ -4,10 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import android.view.WindowManager;
 
 import java.util.List;
 import io.realm.Realm;
@@ -31,6 +32,7 @@ public class QuizActivity extends AppCompatActivity{
 
         listView = (ListView) findViewById(R.id.listView);
         answerEditText = (EditText) findViewById(R.id.answerEditText);
+
     }
 
     public void setMemoList2() {
@@ -48,6 +50,13 @@ public class QuizActivity extends AppCompatActivity{
         super.onResume();
 
         setMemoList2();
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD |
+                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
+                WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON |
+                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
+        startService(new Intent(this, PlaySoundService.class));
     }
 
 
@@ -59,6 +68,9 @@ public class QuizActivity extends AppCompatActivity{
             answerEditText.setText("");
 
             if (listView.getCount() == 0) {
+                stopService(new Intent(QuizActivity.this, PlaySoundService.class));
+                PreferenceUtil pref = new PreferenceUtil(QuizActivity.this);
+                pref.delete(AlarmSetActivity.ALARM_TIME);
                 Intent intent = new Intent(QuizActivity.this, MainActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "二度寝しよう！", Toast.LENGTH_SHORT).show();

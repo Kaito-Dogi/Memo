@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="タイトル"
+            android:hint="word"
             android:inputType="textPersonName" />
 
         <EditText
@@ -24,7 +24,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:gravity="top"
-            android:hint="メモ"
+            android:hint="meaning"
             android:inputType="textPersonName" />
 
         <Button
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:onClick="update"
-            android:text="更新"
+            android:text="renewal"
             android:textColor="#FFFFFF" />
 
         <Button
@@ -43,7 +43,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimary"
             android:onClick="delete"
-            android:text="削除"
+            android:text="delete"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </RelativeLayout>

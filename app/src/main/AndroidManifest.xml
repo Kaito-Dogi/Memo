@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.doggy.memo">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
     <application
         android:name=".MemoApplication"
         android:allowBackup="true"
@@ -21,6 +23,11 @@
         <activity android:name=".DetailActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".AlarmSetActivity"/>
+        <receiver android:name=".AlarmReceiver"/>
+        <service
+            android:name=".PlaySoundService"
+            android:enabled="true"
+            android:exported="false"/>
     </application>
 
 </manifest>
