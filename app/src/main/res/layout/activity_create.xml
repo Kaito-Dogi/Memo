@@ -31,9 +31,9 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             android:onClick="create"
-            android:text="create"
+            android:text="add"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 </RelativeLayout>

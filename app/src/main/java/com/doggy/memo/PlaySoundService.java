@@ -74,7 +74,7 @@ public class PlaySoundService extends Service implements MediaPlayer.OnCompletio
     // 再生が終わる度に音量を上げてループ再生
     @Override
     public void onCompletion(MediaPlayer mediaPlayer) {
-        volume += 10.0f;
+        volume += 100.0f;
         play();
     }
 }
