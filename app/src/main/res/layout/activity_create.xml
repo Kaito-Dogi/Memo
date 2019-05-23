@@ -31,7 +31,7 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/button_shadow"
             android:onClick="create"
             android:text="add"
             android:textColor="#FFFFFF" />

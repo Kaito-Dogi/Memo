@@ -26,11 +26,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="5"
+                android:layout_weight="4"
                 android:background="#DFDEDE"
                 android:ems="10"
                 android:gravity="top"
-                android:hint="答え"
+                android:hint="answer"
                 android:inputType="textPersonName"
                 android:textSize="36sp" />
 
@@ -39,9 +39,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_shadow"
                 android:onClick="answer"
-                android:text="解答"
+                android:text="answer"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 

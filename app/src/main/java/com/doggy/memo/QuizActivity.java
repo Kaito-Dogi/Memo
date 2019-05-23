@@ -64,7 +64,6 @@ public class QuizActivity extends AppCompatActivity{
         memo = adapter.getItem(0);
         if(answerEditText.getText().toString().equals(memo.content)){
             adapter.remove(memo);
-            Toast.makeText(this, "おやすみ！", Toast.LENGTH_SHORT).show();
             answerEditText.setText("");
 
             if (listView.getCount() == 0) {
@@ -73,12 +72,14 @@ public class QuizActivity extends AppCompatActivity{
                 pref.delete(AlarmSetActivity.ALARM_TIME);
                 Intent intent = new Intent(QuizActivity.this, MainActivity.class);
                 startActivity(intent);
-                Toast.makeText(this, "二度寝しよう！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Let's sleep again！", Toast.LENGTH_SHORT).show();
 
-            } else {}
+            } else {
+                Toast.makeText(this, "Good night！", Toast.LENGTH_SHORT).show();
+            }
 
         }else {
-            Toast.makeText(this, "おはよう！", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Good morning！", Toast.LENGTH_SHORT).show();
             answerEditText.setText("");
         }
     }
