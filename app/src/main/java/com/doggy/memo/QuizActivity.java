@@ -59,7 +59,6 @@ public class QuizActivity extends AppCompatActivity{
         startService(new Intent(this, PlaySoundService.class));
     }
 
-
     public void answer(View view) {
         memo = adapter.getItem(0);
         if(answerEditText.getText().toString().equals(memo.content)){
